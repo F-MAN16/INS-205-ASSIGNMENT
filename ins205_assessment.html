@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character encoding set to UTF-8 as required -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title includes my full name as required -->
+    <title>Idowu Fiyinfoluwa Enoch | INS205 Assessment</title>
+
+    <style>
+        /* =====================================================
+           GLOBAL RESET
+           Removes default browser spacing so my own spacing
+           rules behave predictably across sections.
+           ===================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* =====================================================
+           BASE PAGE STYLES
+           A dark, terminal-inspired theme — fitting since the
+           page belongs to someone who codes and games.
+           Body text uses a clean sans-serif for readability,
+           while headings use a monospace font to feel like
+           code / terminal output.
+           ===================================================== */
+        body {
+            background-color: #0d1117;       /* near-black, like a code editor */
+            color: #c9d1d9;                   /* soft light grey for body text */
+            font-family: -apple-system, "Segoe UI", Arial, sans-serif;
+            line-height: 1.6;
+            padding: 40px 20px 60px;
+        }
+
+        /* Container keeps content readable on wide screens */
+        .page-wrap {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* =====================================================
+           TASK 1: PAGE HEADING
+           Centered, visually distinct from body text via a
+           monospace font, larger size, accent colour and a
+           terminal "prompt" prefix that doubles as decoration.
+           ===================================================== */
+        h1 {
+            font-family: "Courier New", Courier, monospace;
+            text-align: center;               /* heading centered on the page */
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #39d353;                   /* terminal-green accent */
+            border-bottom: 2px solid #21262d;
+            padding-bottom: 18px;
+            margin-bottom: 32px;
+        }
+
+        /* The blinking-prompt looking prefix before the heading text */
+        h1 .prompt {
+            color: #58a6ff;                   /* blue, distinct from the green */
+        }
+
+        /* =====================================================
+           SECTION CARDS
+           Each <section> is styled like a small terminal/code
+           card: subtle background, rounded corners, and a left
+           accent border so sections are easy to scan.
+           ===================================================== */
+        section {
+            background-color: #161b22;
+            border: 1px solid #21262d;
+            border-left: 4px solid #39d353;   /* accent strip */
+            border-radius: 8px;
+            padding: 24px 28px;
+            margin-bottom: 24px;
+        }
+
+        /* Section headings styled like a terminal command,
+           e.g. "$ whoami" — ties back to the coder theme and
+           tells the reader what each section contains. */
+        section h2 {
+            font-family: "Courier New", Courier, monospace;
+            color: #58a6ff;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+        }
+
+        section h2::before {
+            content: "$ ";
+            color: #39d353;
+        }
+
+        /* Key:value style rows used for personal details,
+           similar to how a dev might list info in a resume */
+        .detail-row {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 6px;
+            flex-wrap: wrap;
+        }
+
+        .detail-label {
+            font-family: "Courier New", Courier, monospace;
+            color: #8b949e;                   /* muted grey for labels */
+            min-width: 150px;
+        }
+
+        .detail-value {
+            color: #c9d1d9;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        /* =====================================================
+           TASK 2: CONTACT BUTTON
+           Styled as a clear, clickable button. Its background
+           colour is intentionally left neutral here because
+           Task 3's script overrides it at runtime based on the
+           hashed matric number.
+           ===================================================== */
+        .btn {
+            display: inline-block;
+            background-color: #30363d;        /* fallback colour before JS runs */
+            color: #ffffff;
+            font-family: "Courier New", Courier, monospace;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 12px 26px;
+            border-radius: 6px;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .btn:hover,
+        .btn:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            color: #8b949e;
+            font-size: 0.85rem;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrap">
+
+        <!-- TASK 1: Centered, visually distinct heading -->
+        <h1><span class="prompt">~$</span> INS205 Static Web Assessment</h1>
+
+        <!-- TASK 2 (Section 1): Personal introduction -->
+        <section id="about">
+            <h2>whoami</h2>
+            <div class="detail-row">
+                <span class="detail-label">Full Name:</span>
+                <span class="detail-value">Idowu Fiyinfoluwa Enoch</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Department:</span>
+                <span class="detail-value">Computer Science</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Matric Number:</span>
+                <span class="detail-value">UJ/2024/NS/0450</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Level:</span>
+                <span class="detail-value">200 Level</span>
+            </div>
+            <p style="margin-top: 14px;">
+                I'm an HTML &amp; CSS coder who also enjoys gaming in my free time —
+                two hobbies that go together more than people expect, since good
+                games and good web pages both come down to caring about the small
+                details no one notices until they're missing.
+            </p>
+        </section>
+
+        <!-- TASK 2 (Section 2): About the page / course -->
+        <section id="page-info">
+            <h2>about-this-page</h2>
+            <p>
+                This page is a practical assessment for the course
+                <strong>INS205</strong>. It is a single, self-contained static
+                webpage built using only plain HTML5 and CSS — no frameworks like
+                Bootstrap or Tailwind were used. Every style rule lives inside the
+                <code>&lt;style&gt;</code> tag in the document's <code>&lt;head&gt;</code>,
+                exactly as the brief requires.
+            </p>
+            <p>
+                The goal of the page is to demonstrate a valid HTML5 document
+                structure, semantic <code>&lt;section&gt;</code> elements, and basic
+                DOM scripting — the last of which colours the "Send Email" button
+                below based on my matriculation number.
+            </p>
+        </section>
+
+        <!-- TASK 2 (Section 3): Contact section with mailto button -->
+        <section id="contact">
+            <h2>contact-me</h2>
+            <p>Got a question about this page, or just want to say hi? Reach me directly:</p>
+            <a id="send-btn"
+               class="btn"
+               href="mailto:2024ns0450@unijos.edu.ng?subject=Hello%20from%20your%20INS205%20page">
+               Send Email
+            </a>
+        </section>
+
+        <footer>
+            &copy; 2026 Idowu Fiyinfoluwa Enoch &mdash; built for INS205
+        </footer>
+    </div>
+
+    <!-- TASK 3: Required script — only the matric value below was changed -->
+    <script>
+        /* -------------------------------------------------------
+           Matric-number → button colour
+           Replace the matric value below with your own number.
+           ------------------------------------------------------- */
+        const matric = "UJ/2024/NS/0450"; // <-- CHANGE THIS TO YOUR MAT. NO.
+
+	/* CHANGE NOTHING BEYOND THIS POINT - CHANGE NOTHING BEYOND THIS POINT */ 
+
+        function hashString(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                hash = (hash * 31 + str.charCodeAt(i)) >>> 0;
+            }
+            return hash;
+        }
+
+        // Normalise input
+        const normalised = matric.trim().toUpperCase();
+
+        // Map the hash to a hue value between 0 and 359 degrees
+        const hue = hashString(normalised) % 360;
+
+        // Build an HSL colour: fixed saturation & lightness, varying hue
+        const buttonColour = `hsl(${hue}, 65%, 45%)`;
+
+        // Apply the colour to the Send Email button
+        document.getElementById("send-btn").style.background = buttonColour;
+    </script>
+</body>
+</html>
